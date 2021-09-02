@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amscd, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\oddsidemargin 0pt
+\evensidemargin 0pt
+\marginparwidth 40pt
+\marginparsep 10pt
+\topmargin -20pt
+\headsep 10pt
+\textheight 8.7in
+\textwidth 6.65in
+\linespread{1.2}
+
+\title{ }
+\author{ }
+\date{}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\newcommand{\rr}{\mathbb{R}}
+
+\newcommand{\al}{\alpha}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\aff}{aff}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+ 
+\end{abstract}
+
+\section{ }\label{section:introduction}
+
+Suppose, that we have the stochastic process which consists of $N$ internal states. In each state, the process has waiting time distributed exponentially . For each state parameters $\tau_i \sim Exp(\lambda_i)$ are independent. 
+For simplicity, we assume $N$ as a fixed parameter. 
+\medskip
+%\begin{figure}
+%\centerline{\includegraphics[scale=1]{fig1-Tverberg}}
+%\caption{An example of a Tverberg partition.  The partition is not unique.}
+%\end{figure}
+ 
+ \tikzstyle{int}=[draw, fill=blue!20, minimum size=2em]
+ \tikzstyle{init} = [pin edge={to-,thin,black}]
+ \begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+ \node [int ] (a) {$\lambda_1$};
+ \node (b) [left of=a,node distance=2cm, coordinate] {a};
+ \node [int ] (c) [right of=a] {$\lambda_2$};
+ \node [int ] (d) [right of=c] {$\lambda_i$};
+ \node [int ] (e) [right of=d] {$\lambda_N$};
+ \node [coordinate] (end) [right of=e, node distance=2cm]{};
+ \path[->] (b) edge node {  } (a);
+ \path[->] (a) edge node { } (c);
+ \path[->] (c) edge node {...} (d);
+ \path[->] (d) edge node {...} (e);
+ \draw[->] (e) edge node { } (end) ;
+ \end{tikzpicture}
+ \medskip
+  \par Data observations $X_j$, $j=1..m$ is a sum of waiting times: $X = \sum_i^N \tau_i$. Our aim is to estimate parameters $\lambda_i$.
+  
+
+\subsection{ }
+ 
+
+ 
+
+\bibliographystyle{alpha}
+\bibliography{references} % see references.bib for bibliography management
+
+\end{document}
